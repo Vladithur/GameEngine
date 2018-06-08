@@ -1,8 +1,14 @@
 #pragma once
-class Scaler
+
+#include <float.h>
+#include <string.h>
+#include <stdio.h>
+
+#include "Image.h"
+
+static class Scaler
 {
 public:
-	Scaler();
-	~Scaler();
+	void bmp_to_bytes(char* file_path, int width, int height, Image* destination);
 };
 
