@@ -1,5 +1,6 @@
 #include "Scaler.h"
 #include "Image.h"
+#include "Utils.h"
 
 #include <stdio.h>
 #include <iostream>
@@ -20,15 +21,14 @@ int main() {
 	Colour exp01 = Colour(0, 0, 0);
 	Colour exp11 = Colour(255, 255, 255);
 
-	uint16_t a = pix00.Equals(exp00);
-	uint16_t b = pix10.Equals(exp10);
-	uint16_t c = pix01.Equals(exp01);
-	uint16_t d = pix11.Equals(exp11);
-
-	cout << "Pixel 0 0: " << a << endl;
-	cout << "Pixel 1 0: " << b << endl;
-	cout << "Pixel 0 1: " << c << endl;
-	cout << "Pixel 1 1: " << d << endl;
+	cout << "Pixel 0 0:  ";
+	Utils::colour_compare(exp00, pix00);
+	cout << "Pixel 1 0:  ";
+	Utils::colour_compare(exp10, pix10);
+	cout << "Pixel 0 1:  ";
+	Utils::colour_compare(exp01, pix01);
+	cout << "Pixel 1 1:  ";
+	Utils::colour_compare(exp11, pix11);
 
 	system("pause");
 	return 0;

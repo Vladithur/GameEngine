@@ -15,10 +15,14 @@
     <ClCompile Include="test0.cpp">
       <Filter>Scaler\code</Filter>
     </ClCompile>
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="bmp0.bmp">
       <Filter>Scaler\files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
 </Project>

@@ -16,6 +16,5 @@ public:
 	Colour();
 	Colour(uint8_t r, uint8_t g, uint8_t b);
 	~Colour();
-	uint8_t Equals(Colour b);
 };
 
