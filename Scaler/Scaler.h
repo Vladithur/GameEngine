@@ -3,11 +3,15 @@
 #include <float.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdint.h>
 
 #include "Image.h"
 
-static class Scaler
+class Scaler
 {
+private: 
+	static Image readBmp(const char* file_path, uint16_t width, uint16_t height);
 public:
-	void bmp_to_bytes(char* file_path, int width, int height, Image* destination);
+	static Image bmp_to_bytes(const char* file_path, uint16_t width, uint16_t height);
+	static void bmp_to_bytes(const char* file_path, uint16_t width, uint16_t height, Image* destination);
 };

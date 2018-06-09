@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Scaler">
+      <UniqueIdentifier>{b0589ec4-84f0-4769-97fb-85f76c6cbc94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scaler\code">
+      <UniqueIdentifier>{110f1bcc-7cf5-465d-a2a9-9b8fddedd78b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scaler\files">
+      <UniqueIdentifier>{5f08b3cd-15b3-48e5-b087-1b1f0d6d1c4f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test0.cpp">
+      <Filter>Scaler\code</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bmp0.bmp">
+      <Filter>Scaler\files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
