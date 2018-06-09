@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{CE9C6BD5-96D4-4F38-9CB3-2EDDC08C94B7}</ProjectGuid>
-    <RootNamespace>Scaler</RootNamespace>
+    <ProjectGuid>{58A60EFF-C14B-43E8-ADCD-01589652AE4F}</ProjectGuid>
+    <RootNamespace>GameEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,12 +115,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Image.h" />
-    <ClInclude Include="Scaler.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Image.cpp" />
-    <ClCompile Include="Scaler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

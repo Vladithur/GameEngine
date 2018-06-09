@@ -1,8 +1,5 @@
 #include "Image.h"
 
-
-
-
 Image::Image()
 {
 }
@@ -24,3 +21,4 @@ unsigned int Image::GetPixel(int x, int y)
 Image::~Image()
 {
 }
+
