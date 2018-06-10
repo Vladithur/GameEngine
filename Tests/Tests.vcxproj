@@ -87,6 +87,9 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\AlsoUser\Documents\GameEngine\Scaler;C:\Users\AlsoUser\Documents\GameEngine\GameEngine</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>C:\Users\AlsoUser\Documents\GameEngine\GameEngine\Debug\scaler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
