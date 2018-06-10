@@ -5,6 +5,19 @@ Utils::~Utils()
 {
 }
 
+void Utils::print_image(Image img)
+{
+	uint16_t width = img.width;
+	uint16_t height = img.height;
+	for (uint16_t x = 0; x < width; x++) {
+		for (uint16_t y = 0; y < height; y++) {
+			cout << "X: " << x << " Y: " << y;
+			print_colour(img.GetPixel(x, y));
+			cout << endl;
+		}
+	}
+}
+
 void Utils::print_colour(Colour col)
 {
 	uint16_t r = col.red;

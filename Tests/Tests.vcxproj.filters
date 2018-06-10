@@ -12,10 +12,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test0.cpp">
-      <Filter>Scaler\code</Filter>
-    </ClCompile>
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="bmp0.bmp">

@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <math.h>
 
 #include "Image.h"
 
@@ -14,4 +15,5 @@ private:
 public:
 	static Image bmp_to_bytes(const char* file_path, uint16_t width, uint16_t height);
 	static void bmp_to_bytes(const char* file_path, uint16_t width, uint16_t height, Image* destination);
+	static Image scale_image(Image src, uint16_t newW, uint16_t newH);
 };
