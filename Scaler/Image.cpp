@@ -21,7 +21,7 @@ Image::Image(uint16_t w, uint16_t h, uint8_t * d)
 	data = d;
 }
 
-//your x/y starts from top left
+//your x/y starts from bottom left
 Colour Image::GetPixel(uint16_t x, uint16_t y)
 {
 	int ind = (y * width + x) * 3;
