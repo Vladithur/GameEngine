@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{03832DD3-0D84-4E3C-B016-B7FA18CFC986}</ProjectGuid>
-    <RootNamespace>Tests</RootNamespace>
+    <ProjectGuid>{288EEB51-22CF-49ED-B068-881F4C0A7B24}</ProjectGuid>
+    <RootNamespace>Renderer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,26 +70,21 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\AlsoUser\Documents\GameEngine\GameEngine;C:\Users\AlsoUser\Documents\GameEngine\Scaler;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\AlsoUser\Documents\GameEngine\Scaler;C:\Users\AlsoUser\Documents\GameEngine\GameEngine</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <AdditionalDependencies>C:\Users\AlsoUser\Documents\GameEngine\GameEngine\Debug\scaler.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -120,22 +115,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GameEngine\GameEngine.vcxproj">
-      <Project>{58a60eff-c14b-43e8-adcd-01589652ae4f}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Scaler\Scaler.vcxproj">
-      <Project>{ce9c6bd5-96d4-4f38-9cb3-2eddc08c94b7}</Project>
-    </ProjectReference>
+    <ClInclude Include="Renderer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test2.cpp" />
-    <ClCompile Include="Utils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="bmp0.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Utils.h" />
+    <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

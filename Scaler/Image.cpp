@@ -1,6 +1,5 @@
 #include "Image.h"
 
-#include <math.h>
 
 Image::Image()
 {
