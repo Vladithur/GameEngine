@@ -1,5 +1,6 @@
 #include "Utils.h"
 
+#include <windows.h>
 
 Utils::~Utils()
 {
@@ -58,3 +59,5 @@ uint8_t Utils::colour_equals(Colour a, Colour b)
 	if (r > 0 && g > 0 && bl > 0) temp = -3;
 	return r + g + bl + (r > 0 && g > 0) + (r > 0 && bl > 0) * 2 + temp;
 }
+
+

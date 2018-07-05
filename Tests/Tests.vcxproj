@@ -22,14 +22,14 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{03832DD3-0D84-4E3C-B016-B7FA18CFC986}</ProjectGuid>
     <RootNamespace>Tests</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -69,7 +69,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -85,10 +85,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\AlsoUser\Documents\GameEngine\Scaler;C:\Users\AlsoUser\Documents\GameEngine\GameEngine</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vlad\source\repos\GameEngine\Renderer;C:\Users\Vlad\source\repos\GameEngine\Scaler;C:\Users\Vlad\source\repos\GameEngine\GameEngine</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>C:\Users\AlsoUser\Documents\GameEngine\GameEngine\Debug\scaler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\Users\Vlad\source\repos\GameEngine\GameEngine\Debug\scaler.lib;C:\Users\Vlad\source\repos\GameEngine\GameEngine\Debug\renderer.lib;C:\Users\Vlad\source\repos\GameEngine\GameEngine\Debug\gameengine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -123,16 +123,20 @@
     <ProjectReference Include="..\GameEngine\GameEngine.vcxproj">
       <Project>{58a60eff-c14b-43e8-adcd-01589652ae4f}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Renderer\Renderer.vcxproj">
+      <Project>{288eeb51-22cf-49ed-b068-881f4c0a7b24}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Scaler\Scaler.vcxproj">
       <Project>{ce9c6bd5-96d4-4f38-9cb3-2eddc08c94b7}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test2.cpp" />
+    <ClCompile Include="test3.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="bmp0.bmp" />
+    <Image Include="bmp1.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h" />

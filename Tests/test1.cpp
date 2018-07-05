@@ -10,7 +10,7 @@
 using namespace std;
 
 int main() {
-	Image img = Scaler::bmp_to_bytes("bmp0.bmp");
+	Image img = Image::bmp_to_image("bmp0.bmp");
 
 	cout << "Image:" << endl << endl;
 
@@ -20,11 +20,15 @@ int main() {
 
 	cout << endl << endl << "Image x2:" << endl << endl;
 
+	Image::image_to_bmp(img, "bmp0_testX2_0.bmp");
+
 	Utils::print_image(img);
 
 	img = Scaler::scale_image(img, 0.5f);
 
 	cout << endl << endl << "Image scaled back to normal from x2:" << endl << endl;
+
+	Image::image_to_bmp(img, "bmp0_testX2_1.bmp");
 
 	Utils::print_image(img);
 

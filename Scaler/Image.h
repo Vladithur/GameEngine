@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #include "Colour.h"
+#include <Windows.h>
 
 class Image
 {
@@ -15,5 +16,8 @@ public:
 	Image(uint16_t w, uint16_t h, uint8_t * d);
 	Colour GetPixel(uint16_t x, uint16_t y);
 	~Image();
+
+	static Image bmp_to_image(const char * file_path);
+	static void image_to_bmp(Image src, const char* file_path);
 };
 

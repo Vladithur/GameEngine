@@ -10,10 +10,12 @@
 using namespace std;
 
 int main() {
-	Image img = Scaler::bmp_to_bytes("bmp0.bmp");
+	Image img = Image::bmp_to_image("bmp0.bmp");
 
-	cout << "Image:";
+	cout << "Image:  ";
 	Utils::print_image(img);
+
+	Image::image_to_bmp(img, "bmp0_test.bmp");
 
 	system("pause");
 	return 0;
