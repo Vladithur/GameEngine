@@ -11,6 +11,7 @@ Image::Image(uint16_t w, uint16_t h)
 {
 	width = w;
 	height = h;
+	data = new uint8_t[w * h * 3];
 }
 
 Image::Image(uint16_t w, uint16_t h, uint8_t * d)
@@ -27,6 +28,15 @@ Colour Image::GetPixel(uint16_t x, uint16_t y)
 	return Colour(data[ind + 2], data[ind + 1], data[ind]);
 }
 
+//your x/y starts from bottom left
+void Image::SetPixel(uint16_t x, uint16_t y, Colour col)
+{
+	int ind = (y * width + x) * 3;
+	data[ind + 2] = col.red;
+	data[ind + 1] = col.green;
+	data[ind] = col.blue;
+}
+
 Image Image::bmp_to_image(const char * file_path)
 {
 	FILE * pFile;
@@ -35,7 +45,7 @@ Image Image::bmp_to_image(const char * file_path)
 	size_t result;
 
 	fopen_s(&pFile, file_path, "rb");
-	if (pFile == NULL) { fputs("File error", stderr);}
+	if (pFile == NULL) { fputs("File error", stderr); }
 
 	// obtain file size:
 	fseek(pFile, 0, SEEK_END);
@@ -44,18 +54,17 @@ Image Image::bmp_to_image(const char * file_path)
 
 	// allocate memory to contain the whole file:
 	buffer = (uint8_t*)malloc(sizeof(uint8_t)*lSize);
-	if (buffer == NULL) { fputs("Memory error", stderr);}
+	if (buffer == NULL) { fputs("Memory error", stderr); }
 
 	// copy the file into the buffer:
 	result = fread(buffer, 1, lSize, pFile);
-	if (result != lSize) { fputs("Reading error", stderr);}
+	if (result != lSize) { fputs("Reading error", stderr); }
 
 	/* the whole file is now loaded in the memory buffer. */
 
-
-	uint16_t width = buffer[18];
-	uint16_t height = buffer[22];
-	uint8_t * data = new uint8_t[lSize - 54]; 
+	uint16_t width = *(uint32_t *)&buffer[18];
+	uint16_t height = *(uint32_t *)&buffer[22];
+	uint8_t * data = new uint8_t[lSize - 54];
 	std::copy(buffer + 54, buffer + lSize, data);
 
 	Image * img = new Image(width, height, data);

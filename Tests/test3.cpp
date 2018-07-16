@@ -1,7 +1,10 @@
 
 #include "Engine.h"
 #include "Renderer.h"
+#include "GameObjectRenderType.h"
 
+
+int wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow);
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
@@ -30,6 +33,21 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	Engine engine = Engine();
 	engine.CreateRenderer(500, 500, RendererWindowStyle::Window, hwnd, nCmdShow);
+
+	int count = 1000000;
+	for (int i = 0; i < count; i++) {
+		engine.AddGameObject(GameObject());
+	}
+	for (int i = count - 1; i > 0; i--) {
+		engine.RemoveGameObject(i);
+	}
+
+	GameObject obj = GameObject();
+	Camera cam = Camera(Position(-1, 0, 0), Rotation(), 90);
+	obj.AddFrontAnimation(Animation(Image::bmp_to_image("wall.bmp")));
+	engine.AddGameObject(obj);
+	engine.AddGameObject(cam);
+	engine.UpdateGame(cam);
 
 	while (GetMessage(&msg, NULL, 0, 0)) {
 

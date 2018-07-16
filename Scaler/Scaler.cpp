@@ -16,18 +16,18 @@ Image Scaler::scale_image(Image src, uint16_t newW, uint16_t newH)
 
 		float oldX = 0;
 		uint16_t newX = 0;
-		while (newX < newW) {
+		while (newX <= (float) newW - (1 / moveX)) {
 
 			float oldY = 0;
 			uint16_t newY = 0;
 
 			uint16_t rnd_oldX = roundf(oldX);
 
-			while (newY < newH) {
+			while (newY <= (float) newH - (1 / moveY)) {
 
 				uint16_t rnd_oldY = roundf(oldY);
-				int ind = (rnd_oldY * width + rnd_oldX) * 3;
-				int newInd = (newY * newW + newX) * 3;
+				uint32_t ind = (rnd_oldY * width + rnd_oldX) * 3;
+				uint32_t newInd = (newY * newW + newX) * 3;
 				/*uint8_t a = oldData[ind];
 				uint8_t b = oldData[ind + 1];
 				uint8_t c = oldData[ind + 2];

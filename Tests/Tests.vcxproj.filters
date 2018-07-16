@@ -24,6 +24,15 @@
     <Image Include="bmp1.bmp">
       <Filter>Tests\files</Filter>
     </Image>
+    <Image Include="wall.bmp">
+      <Filter>Tests\files</Filter>
+    </Image>
+    <Image Include="real_image.bmp">
+      <Filter>Tests\files</Filter>
+    </Image>
+    <Image Include="vs.bmp">
+      <Filter>Tests\files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h" />

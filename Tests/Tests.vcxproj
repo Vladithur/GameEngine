@@ -137,6 +137,9 @@
   <ItemGroup>
     <Image Include="bmp0.bmp" />
     <Image Include="bmp1.bmp" />
+    <Image Include="real_image.bmp" />
+    <Image Include="vs.bmp" />
+    <Image Include="wall.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h" />

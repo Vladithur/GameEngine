@@ -2,11 +2,50 @@
 
 
 
-void Renderer::UpdateScene(GameObject camera, uint32_t camera_index)
+RayHitObject Renderer::SendRay(Engine eng, Position pos, Position dir, uint16_t maxRange, float step)
 {
+	Position current_pos= Position(pos);
+	float travelled = 0;
+	while (travelled < maxRange) {
+		float * dist;
+		GameObject * tmp = &eng.GetGameObjectClosestToPos(current_pos, step, dist, GameObjectRenderType::NotRendered, true);
+		if (*dist <= step) return RayHitObject(*tmp, *dist, true);
+		travelled += step;
+		delete tmp;
+	}
+	return RayHitObject(false);
 }
 
-Renderer::Renderer(uint16_t width, uint16_t height, RendererWindowStyle style, GameObject ** objs, HWND hwnd, int nCmdShow)
+Image Renderer::UpdateScene(Camera camera)
+{
+	float fov = camera.field_of_view;
+	if (angleY != fov) {
+		angleY = fov;
+		angleX = fov * (height / width);
+		float angle = 90 - fov;
+		float side = height / 2;
+		distance = tan(angle) * side;
+		slopeSize = sqrt(sqrt((width * width) + (height * height)) + (distance * distance));
+	}
+
+	rays.clear();
+
+	while (true) {
+		for (int i = 0; i < width / ray_cast_scale; i += ray_cast_scale) {
+			thread * thr = new thread[height / ray_cast_scale];
+			for (int j = 0; j < height / ray_cast_scale; j += ray_cast_scale) {
+				//thread t = 
+			}
+		}
+	}
+
+	Image result = Image(width, height);
+	return result;
+}
+
+
+
+Renderer::Renderer(uint16_t w, uint16_t h, RendererWindowStyle style, GameObject ** objs, HWND hwnd, int nCmdShow)
 {
 	objects = objs;
 
@@ -31,6 +70,7 @@ Renderer::Renderer(uint16_t width, uint16_t height, RendererWindowStyle style, G
 	}
 	ShowWindow(hwnd, nCmdShow);
 	UpdateWindow(hwnd);
+	width = w; height = h;
 }
 
 Renderer::Renderer()

@@ -15,6 +15,7 @@ public:
 	Image(uint16_t w, uint16_t h);
 	Image(uint16_t w, uint16_t h, uint8_t * d);
 	Colour GetPixel(uint16_t x, uint16_t y);
+	void SetPixel(uint16_t x, uint16_t y, Colour col);
 	~Image();
 
 	static Image bmp_to_image(const char * file_path);

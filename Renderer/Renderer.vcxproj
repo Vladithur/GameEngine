@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Vlad\source\repos\GameEngine\GameEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vlad\source\repos\GameEngine\Scaler;C:\Users\Vlad\source\repos\GameEngine\GameEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -116,11 +116,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="RayHitObject.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RendererWindowStyle.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="RayHitObject.cpp" />
     <ClCompile Include="Renderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameEngine\GameEngine.vcxproj">
+      <Project>{58a60eff-c14b-43e8-adcd-01589652ae4f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Scaler\Scaler.vcxproj">
+      <Project>{ce9c6bd5-96d4-4f38-9cb3-2eddc08c94b7}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
