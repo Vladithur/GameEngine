@@ -9,7 +9,14 @@ Curently the project is split into 4 parts:
 2. Renderer - The rendering part.
 3. Scaler - Image manipulation utils.
 4. Tests - Various c++ executable test files to showcase functions
+
 But first, let me tell you how to clone this repo and get going.
 ## Building
-First clone the repo:
-$ git clone 
+First clone the github repository:
+
+$ git clone https://github.com/Vladithur/GameEngine.git
+
+Then open the /path/to/GameEngine/GameEngine/GameEngine.sln file in Visual Studio
+
+Rebuild all projects, you might need to change some setting for each project in properties
+
