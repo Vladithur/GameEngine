@@ -17,4 +17,8 @@ Then open the /path/to/GameEngine/GameEngine/GameEngine.sln file in Visual Studi
 
 Rebuild all projects, you might need to change some setting for each project in properties
 
-###
+### Troubleshooting
+
+Depending on your windows sdk version, you might need to change it. By default this project uses Windows 10 Sdk version 10.0.16299.0
+
+(Screenshot for Tests projects) ![image](https://user-images.githubusercontent.com/29858044/42924226-d96a9e3a-8b31-11e8-8670-3b8262c2aa52.png)
