@@ -31,8 +31,8 @@ public:
 	GameObject GetGameObject(uint32_t index);
 	GameObject GetGameObject(GameObject obj);
 	GameObject GetLastGameObject();
-	GameObject GetGameObjectClosestToPos(Position pos, float maxError, float * dist);
-	GameObject GetGameObjectClosestToPos(Position pos, float maxError, float * dist, GameObjectRenderType render_type, bool exclude_type);
+	GameObject* GetGameObjectClosestToPos(Position pos, float maxError, float * dist);
+	GameObject* GetGameObjectClosestToPos(Position pos, float maxError, float * dist, GameObjectRenderType render_type, bool exclude_type);
 
 
 	Image UpdateGame(Camera camera);

@@ -1,6 +1,34 @@
 #include "Position.h"
 
 
+static float xtoy(float x)
+{
+	float r = (x - (int)((x - 1) / 90) * 90) / 90;
+	if (x > 180)
+		return r;
+
+	float c = 1;
+	if (x > 90 && x <= 180)
+		c = 0;
+
+	return c - r;
+}
+
+Position Position::MoveFromRotation(Rotation r)
+{
+	Rotation temp = Rotation(r);
+	temp.Normalize(); 
+	Position dir = Position();
+	dir.x = xtoy(temp.x);
+	dir.y = xtoy(temp.y);
+	dir.z = xtoy(temp.z);
+
+	// TODO 
+	// Apply magnitude scaling
+
+	delete &temp;
+	return dir;
+}
 
 float Position::Distance(Position a, Position b)
 {

@@ -77,7 +77,7 @@ GameObject Engine::GetLastGameObject()
 	return gameObjects[last_index];
 }
 
-GameObject Engine::GetGameObjectClosestToPos(Position pos, float maxError, float * dist)
+GameObject* Engine::GetGameObjectClosestToPos(Position pos, float maxError, float * dist)
 {
 	int i = 0;
 	while (i < item_count) {
@@ -89,9 +89,10 @@ GameObject Engine::GetGameObjectClosestToPos(Position pos, float maxError, float
 		}
 		i++;
 	}
+	return nullptr;
 }
 
-GameObject Engine::GetGameObjectClosestToPos(Position pos, float maxError, float * dist, GameObjectRenderType render_type, bool exclude_type)
+GameObject* Engine::GetGameObjectClosestToPos(Position pos, float maxError, float * dist, GameObjectRenderType render_type, bool exclude_type)
 {
 	int i = 0;
 	if (!exclude_type) {
@@ -116,6 +117,7 @@ GameObject Engine::GetGameObjectClosestToPos(Position pos, float maxError, float
 			i++;
 		}
 	}
+	return nullptr;
 }
 
 Image Engine::UpdateGame(Camera c)
